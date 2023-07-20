@@ -7,7 +7,7 @@ const schedule = require("./routes/schedule");
 
 // main website page folder
 
-app.use("/", express.static("./front-end"));
+app.use("/", express.static("./front-end/build"));
 
 app.use(express.urlencoded({ extended: false }));
 
