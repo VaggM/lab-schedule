@@ -70,7 +70,7 @@ const readClasses = (worksheet) => {
           const startTimeStr = startTime.toString().padStart(2, "0");
           const endTime = row + 7 + rowspan;
 
-          const timeRange = `${startTimeStr}:00-${endTime}:00`;
+          const timeRange = `${startTimeStr}:00 - ${endTime}:00`;
           const lines = cellValue.split("\n");
 
           classes.push({
