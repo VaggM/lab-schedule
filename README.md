@@ -11,7 +11,10 @@ that serves a react build folder for its front-end.
 ## Features
 
 This web-app showcases a weekly schedule by swapping between a daily
-and a weekly display with a timer of 5-30 seconds.
+and a weekly display with a timer of 5 to 30 seconds.
+
+(the following examples have random generated data and are not
+read from an excel file)
 
 Daily display:
 
@@ -27,6 +30,9 @@ Weekly display:
 ![Weekly display](./screenshots/weeklydisplay.png)
 
 The schedule is read from an excel file of the following format.
+(the excel read happens in the back-end and the classes are provided
+through an API, by changing the classes provided in that API url
+the front-end will fetch that data instead)
 
 > Every cell that has multiple lines writter is considered a class.
 >
