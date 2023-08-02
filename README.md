@@ -27,6 +27,19 @@ Weekly display:
 ![Weekly display](./screenshots/weeklydisplay.png)
 
 The schedule is read from an excel file of the following format.
+
+> Every cell that has multiple lines writter is considered a class.
+>
+> The first line is its name and the second is its professor.
+>
+> The line of the cells represents the time of the class
+> (lines 3 to 15 are converted to 09:00 to 21:00 and are assumed
+> to take up one hour). If the cell is merged horizontally it will
+> add to its total hour length.
+> 
+> The column of the cells represents the day of the class
+> (columnes B to G are converted to Monday throuh Saturday).
+
 Its path should be saved to an .env file based on the provided
 [sample](.envsample).
 
@@ -38,16 +51,16 @@ service) to change the current schedule without manually interacting
 with the machine running the app.
 
 Lastly, by clicking on the screen the settings button appears.
-The following settings are available:
 
-- Lab Name: sets the title on the top side of the app
-- Timer: sets the timer of switching between the daily
-  and the weekly diplay
-- Daily Max: defines the limit of classes displayed within the daily
-  display (the rest of the classes appear after a small delay)
-- Weekly Max: defines the limit of classes displayed within the weekly
-  display (the rest of the classes appear after a small delay)
-- Manual Update: reads the excel file manually
+| Setting Name | Description |
+| --- | --- |
+| Lab Name | title on the top side of the app |
+| Timer | timer of switching between the daily |
+| Daily Max | limit of classes displayed in daily display* |
+| Weekly Max | limit of classes displayed in weekly display*  |
+| Manual Update | excel file manual read |
+
+*the rest of the classes appear after a small delay
 
 ![Settings](./screenshots/settings.png)
 
