@@ -1,12 +1,9 @@
 {
   "name": "lab-schedule",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "description": "App displaying a weekly schedule read from an excel file",
+  "main": "app.js",
+  "author": "Evangelos Mitikas",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.3.1",

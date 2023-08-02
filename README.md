@@ -2,7 +2,11 @@
 
 This web-app showcases a weekly schedule read from an excel file.
 
-It was created to showcase the weekly schedule of ZB109 Consert lab in UniWA, Greece.
+It was created to showcase the weekly schedule of ZB109 Consert
+lab in UniWA, Greece.
+
+The current repository of the web-app includes the node.js back-end
+that serves a react build folder for its front-end.
 
 ## Features
 
@@ -20,14 +24,18 @@ Weekly display:
 
 - all classes for the whole week
 
-The schedule is read from an excel file of the following format.
-The path to the file should be saved to an .env file based on the provided [sample](.envsample).
+![Weekly display](./screenshots/weeklydisplay.png)
 
-The schedule can be read manually through the settings while its
-set to recheck every hour that passes. The folder of excel file
-can be included in a Dropbox folder (or any other similar service)
-to changethe current schedule without manually interacting with
-the machine running the app.
+The schedule is read from an excel file of the following format.
+Its path should be saved to an .env file based on the provided
+[sample](.envsample).
+
+It can be read manually through the settings or it will be read
+automatically after every hour that passes.
+
+The file can be included in a Dropbox folder (or any other similar
+service) to change the current schedule without manually interacting
+with the machine running the app.
 
 Lastly, by clicking on the screen the settings button appears.
 The following settings are available:
@@ -41,8 +49,57 @@ The following settings are available:
   display (the rest of the classes appear after a small delay)
 - Manual Update: reads the excel file manually
 
+![Settings](./screenshots/settings.png)
+
+## Prerequisites
+
+Have node.js and npm installed.
+
+The following versions were used when creating the app:
+
+- node.js v18.12.1
+- npm 8.19.2
+
 ## Installing the app
+
+Follow these steps on a terminal window to install the app:
+
+- clone this repository to your machine
+
+```bash
+git clone https://github.com/VaggM/lab-schedule.git
+```
+
+- cd to the repository folder
+
+```bash
+cd labs-chedule
+```
+
+- install npm packages
+
+```bash
+npm install
+```
 
 ## Running the app
 
+To be able to read the schedule from an excel file
+a .env file should be created to define the path
+to it based on the [sample](.envsample).
+
+To run the app open a terminal on the repository folder
+and run:
+
+```bash
+node app.js
+```
+
+The app opens on port 8000 and can be accessed through
+any browser.
+
 ## Known Issues
+
+The current version of the app doesn't work well
+with low resolution devices and components may
+get on top of each other.
