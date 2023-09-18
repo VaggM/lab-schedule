@@ -30,12 +30,12 @@ const readImages = async (imageFolder) => {
 
     files.forEach((file) => {
       const extname = path.extname(file).toLowerCase();
-      if ([".jpg", ".jpeg", ".png"].includes(extname)) {
+      if ([".jpg", ".jpeg", ".png", ".gif"].includes(extname)) {
         images.push(file);
       }
     })
 
-    return images;
+    return images.sort();
   } catch (error) {
     console.error('Error reading folder:', error);
     throw error;

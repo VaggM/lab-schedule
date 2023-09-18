@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const get_schedule = (req, res) => {
-  const schedulePath = process.env.DATA_FOLDER + "schedule.xlsx";
+  const schedulePath = process.env.DATA_FOLDER + "/schedule.xlsx";
 
   if (!schedulePath) {
     return res
