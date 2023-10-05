@@ -12,7 +12,9 @@ const get_images = async(req, res) => {
       .send({ error: "DATA_FOLDER not specified in .env" });
   }
 
-  const imageFolder = process.env.DATA_FOLDER + "/images";
+  const imageFolder = process.env.DATA_FOLDER + "/images/";
+
+  console.log(imageFolder);
 
   try {
 
