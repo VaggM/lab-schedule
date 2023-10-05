@@ -12,7 +12,7 @@ const get_images = async(req, res) => {
       .send({ error: "DATA_FOLDER not specified in .env" });
   }
 
-  const imageFolder = process.env.DATA_FOLDER + "/images/";
+  const imageFolder = process.env.DATA_FOLDER + "/images";
 
   try {
     const images = await readImages(imageFolder);
@@ -24,7 +24,6 @@ const get_images = async(req, res) => {
 
 const readImages = async (imageFolder) => {
   try {
-    imageFolder = "/home/consert/Dropbox/images/";
     const files = await fs.promises.readdir(imageFolder);
     const images= [];
 
