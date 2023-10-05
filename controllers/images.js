@@ -24,7 +24,7 @@ const get_images = async(req, res) => {
 
 const readImages = async (imageFolder) => {
   try {
-    console.log(imageFolder);
+    imageFolder = "/home/consert/Dropbox/images";
     const files = await fs.promises.readdir(imageFolder);
     const images= [];
 
