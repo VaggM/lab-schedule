@@ -14,10 +14,7 @@ const get_images = async(req, res) => {
 
   const imageFolder = process.env.DATA_FOLDER + "/images/";
 
-  console.log(imageFolder);
-
   try {
-
     const images = await readImages(imageFolder);
     return res.status(200).send({ images });
   } catch (error) {
@@ -27,6 +24,7 @@ const get_images = async(req, res) => {
 
 const readImages = async (imageFolder) => {
   try {
+    console.log(imageFolder);
     const files = await fs.promises.readdir(imageFolder);
     const images= [];
 
