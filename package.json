@@ -1,10 +1,21 @@
 {
   "name": "lab-schedule",
   "version": "1.0.0",
-  "description": "App displaying a weekly schedule read from an excel file",
+  "description": "display weekly schedule and photos",
   "main": "app.js",
-  "author": "Evangelos Mitikas",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VaggM/lab-schedule.git"
+  },
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VaggM/lab-schedule/issues"
+  },
+  "homepage": "https://github.com/VaggM/lab-schedule#readme",
   "dependencies": {
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
