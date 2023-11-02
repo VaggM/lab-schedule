@@ -4,13 +4,16 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const get_schedule = (req, res) => {
-  const schedulePath = process.env.DATA_FOLDER + "/schedule.xlsx";
 
-  if (!schedulePath) {
+  const dataFolder = process.env.DATA_FOLDER;
+
+  if (!dataFolder) {
     return res
       .status(500)
-      .send({ error: "SCHEDULE_PATH not specified in .env" });
+      .send({ error: "DATA_FOLDER not specified in .env" });
   }
+
+  const schedulePath = process.env.DATA_FOLDER + "/schedule.xlsx";
 
   try {
     // Read the Excel file

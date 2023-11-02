@@ -7,7 +7,14 @@ dotenv.config();
 const get_settings = (req, res) => {
 
   const dataFolder = process.env.DATA_FOLDER;
-  const settingsFilePath = path.join(dataFolder, 'settings.json'); // Path to your settings file
+
+  if (!dataFolder) {
+    return res
+      .status(500)
+      .send({ error: "DATA_FOLDER not specified in .env" });
+  }
+
+  const settingsFilePath = process.env.DATA_FOLDER + "/settings.json";
 
   try {
     const settingsData = fs.readFileSync(settingsFilePath, 'utf8');
