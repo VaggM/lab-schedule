@@ -1,6 +1,6 @@
 ## Lab-Schedule
 
-This web-app showcases a weekly schedule read from an excel file and more...
+This web-app showcases a weekly schedule read from an excel file and more.
 
 It was created to showcase the weekly schedule of ZB109 Consert
 lab in UniWA, Greece.
