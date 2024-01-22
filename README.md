@@ -121,3 +121,7 @@ in the settings menu. The settings menu appears when someone taps the screen.
 The current version of the app doesn't work well
 with low resolution devices and components may
 get on top of each other.
+
+## Future plans
+
+Remove daily and weekly displays if no schedule.xlsx is provided.
