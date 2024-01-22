@@ -1,33 +1,77 @@
 ## Lab-Schedule
 
-This web-app showcases a weekly schedule read from an excel file and more.
-
-It was created to showcase the weekly schedule of ZB109 Consert
-lab in UniWA, Greece.
-
-The current repository of the web-app includes the node.js back-end
+Lab-Schedule is a web app created to showcase the weekly schedule of ZB109 Consert
+lab in UniWA, Greece. The current repository of the web-app includes the node.js back-end
 that serves a react build folder for its front-end.
+
+## Prerequisites
+
+Have node.js and npm installed.
+
+The following versions were used when creating the app:
+
+- node.js v18.12.1
+- npm 8.19.2
+
+
+## Installing the app
+
+Follow these steps on a terminal window to install the app:
+
+- clone this repository to your machine
+
+```bash
+git clone https://github.com/VaggM/lab-schedule.git
+```
+
+- cd to the repository folder
+
+```bash
+cd lab-schedule
+```
+
+- install npm packages
+
+```bash
+npm install
+```
+
+## Running the app
+
+Before running the app you need to createa .env file to define the absolute 
+data folder path to it based on the [sample](.envsample). The file might 
+include an APP_PORT or else port 8000 is used by default.
+
+An example data folder can be found [here](./showcasing/data-example/). 
+Data is read every 10 minutes or when someone taps the update button in the 
+settings menu. The settings menu appears when someone taps the screen.
+
+To run the app open a terminal on the repository folder and run:
+
+```bash
+node app.js
+```
+
+The app can now be accessed through any browser on [http://localhost:8080](http://localhost:8080).
 
 ## Features
 
-This web-app showcases a weekly schedule by swapping between a daily
-and a weekly display with a timer of 5 to 30 seconds.
-
-(the following examples have random generated data and are not
-read from an excel file)
+This web-app showcases a weekly schedule by swapping between a daily display,
+a weekly display and some loaded images. Swaps happen every few seconds based 
+on a timer. App settings and images are set through a data folder on your machine.
 
 Daily display:
 
 - current and upcoming classes for the day
 - all classes for the day
 
-![Daily display](./screenshots/dailydisplay.png)
+![Daily display](./showcasing/screenshots/dailydisplay.png)
 
 Weekly display:
 
 - all classes for the whole week
 
-![Weekly display](./screenshots/weeklydisplay.png)
+![Weekly display](./showcasing/screenshots/weeklydisplay.png)
 
 The schedule is read from an excel file of the following format.
 (the excel read happens in the back-end and the classes are provided
@@ -46,76 +90,31 @@ the front-end will fetch that data instead)
 > The column of the cells represents the day of the class
 > (columnes B to G are converted to Monday throuh Saturday).
 
-Its path should be saved to an .env file based on the provided
-[sample](.envsample).
+The schedule should be saved in the data folder as "schedule.xlsx.". Check an example file [here](./showcasing/data-example/schedule.xlsx).
+The app will try to read it every time the Update button is triggered.
 
-It can be read manually through the settings or it will be read
-automatically after every hour that passes.
+Image display:
 
-The file can be included in a Dropbox folder (or any other similar
-service) to change the current schedule without manually interacting
-with the machine running the app.
+- show each image saved in a folder "images" within the data folder
 
-Lastly, by clicking on the screen the settings button appears.
+![Image display](./showcasing/screenshots/imagedisplay.png)
+
+The app will do enough swaps to go through all the images in the data folder.
+It accepts .png, .jpg, .jpeg and .gif.
+
+## App Settings
+
+The app can be modified through a settings.json file in the data folder.
+An example settings file can be found [here](./showcasing/data-example/settings.json).
+Settings are read every 10 minutes or when someone taps the update button 
+in the settings menu. The settings menu appears when someone taps the screen.
 
 | Setting Name | Description |
 | --- | --- |
-| Lab Name | title on the top side of the app |
-| Timer | timer of switching between the daily |
-| Daily Max | limit of classes displayed in daily display* |
-| Weekly Max | limit of classes displayed in weekly display*  |
-| Manual Update | excel file manual read |
-
-*the rest of the classes appear after a small delay
-
-![Settings](./screenshots/settings.png)
-
-## Prerequisites
-
-Have node.js and npm installed.
-
-The following versions were used when creating the app:
-
-- node.js v18.12.1
-- npm 8.19.2
-
-## Installing the app
-
-Follow these steps on a terminal window to install the app:
-
-- clone this repository to your machine
-
-```bash
-git clone https://github.com/VaggM/lab-schedule.git
-```
-
-- cd to the repository folder
-
-```bash
-cd labs-chedule
-```
-
-- install npm packages
-
-```bash
-npm install
-```
-
-## Running the app
-
-To be able to read the schedule from an excel file
-a .env file should be created to define the path
-to it based on the [sample](.envsample).
-
-To run the app open a terminal on the repository folder
-and run:
-
-```bash
-node app.js
-```
-
-The app opens on port 8000 and can be accessed through
-any browser.
+| labname | title on the top side of the app |
+| dailysplit | split limit for showcases classes on daily display |
+| weeklysplit | split limit for showcases classes on weekly display |
+| time | swap timer between displays |
 
 ## Known Issues
 

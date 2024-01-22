@@ -5,6 +5,9 @@ const app = express();
 const dotenv = require("dotenv");
 dotenv.config();
 
+// port config
+const port = process.env.APP_PORT || 8000;
+
 // api handlers
 const schedule = require("./routes/schedule");
 const images = require("./routes/images");
